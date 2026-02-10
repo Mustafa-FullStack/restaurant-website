@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L'Or Noir | تجربة طعام استثنائية</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader">
+        <div class="loader-content">
+            <h1>L'Or Noir</h1>
+            <div class="loader-line"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <h2>L'Or Noir</h2>
+                <span>مطعم فرنسي فاخر</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" data-translate="home">الرئيسية</a></li>
+                <li><a href="#about" data-translate="about">من نحن</a></li>
+                <li><a href="#menu" data-translate="menu">المنيو</a></li>
+                <li><a href="#gallery" data-translate="gallery">معرض الصور</a></li>
+                <li><a href="#reservation" data-translate="reservation">حجز طاولة</a></li>
+                <li><a href="#contact" data-translate="contact">تواصل معنا</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="lang-switch" onclick="toggleLanguage()">
+                    <i class="fas fa-globe"></i>
+                    <span id="lang-text">English</span>
+                </button>
+                <button class="mobile-menu" onclick="toggleMenu()">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="hero-title" data-translate="hero_title">تجربة طعام لا تُنسى</h1>
+            <p class="hero-subtitle" data-translate="hero_subtitle">مذاقات فريدة من المطبخ الفرنسي بلمسة عصرية</p>
+            <div class="hero-buttons">
+                <a href="#reservation" class="btn-primary" data-translate="book_now">احجز الآن</a>
+                <a href="#menu" class="btn-secondary" data-translate="view_menu">استعرض المنيو</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.luxurylifestylemag.co.uk/6249f3a5747f77bb47aa72edd32608a8b4cf4f3a.jpg" alt="Chef preparing food">
+                    <div class="experience-badge">
+                        <span class="years">15</span>
+                        <span class="text" data-translate="years_exp">عاماً من الخبرة</span>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h3 class="section-subtitle" data-translate="our_story">قصتنا</h3>
+                    <h2 class="section-title" data-translate="about_title">فن الطهي بلمسة عصرية</h2>
+                    <p data-translate="about_text">
+                        في L'Or Noir، نؤمن بأن الطعام فن. يجمع شيفنا الحائز على نجمة ميشلان بين التقاليد الفرنسية العريقة والتقنيات الحديثة ليقدم لكم تجربة طعام استثنائية. كل طبق يحكي قصة، وكل مكون يُختار بعناية فائقة.
+                    </p>
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-award"></i>
+                            <span data-translate="quality">جودة عالمية</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-leaf"></i>
+                            <span data-translate="fresh">مكونات طازجة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-user-tie"></i>
+                            <span data-translate="service">خدمة راقية</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-subtitle" data-translate="discover">اكتشف</h3>
+                <h2 class="section-title" data-translate="menu_title">منيو L'Or Noir</h2>
+            </div>
+            
+            <div class="menu-tabs">
+                <button class="tab-btn active" onclick="filterMenu('all')" data-translate="all">الكل</button>
+                <button class="tab-btn" onclick="filterMenu('starters')" data-translate="starters">مقبلات</button>
+                <button class="tab-btn" onclick="filterMenu('main')" data-translate="main_dishes">أطباق رئيسية</button>
+                <button class="tab-btn" onclick="filterMenu('desserts')" data-translate="desserts">حلويات</button>
+                <button class="tab-btn" onclick="filterMenu('drinks')" data-translate="drinks">مشروبات</button>
+            </div>
+
+            <div class="menu-grid">
+                <!-- Starters -->
+                <div class="menu-item" data-category="starters">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/www.foodandwine.com/92667e44e136fcf8ef090b547859bb17daf81960.jpg" alt="Seafood Salad">
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <h4 data-translate="dish1">سلطة سي فود كلاسيكية</h4>
+                            <span class="price">180 ر.س</span>
+                        </div>
+                        <p data-translate="desc1">أخطبوط، كاليماري، جمبري مع صلصة الليمون والأعشاب البحرية</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="starters">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/i0.wp.com/7ae911a28759f3b2d065d0c880d3a39d5e05223a.jpg" alt="Fine Dining Plating">
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <h4 data-translate="dish2">فوا جرا مع التين</h4>
+                            <span class="price">220 ر.س</span>
+                        </div>
+                        <p data-translate="desc2">فوا جرا فرنسي مشوي مع مربى التين البلدي وخبز البريوش</p>
+                    </div>
+                </div>
+
+                <!-- Main Dishes -->
+                <div class="menu-item" data-category="main">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/thumbs.dreamstime.com/52cb116c6bdb1c47875391265e9bef880498c268.jpg" alt="Gourmet Steak">
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <h4 data-translate="dish3">ستيك واغيو A5</h4>
+                            <span class="price">450 ر.س</span>
+                        </div>
+                        <p data-translate="desc3">لحم واغيو ياباني درجة A5 مع صلصة الفلفل الأسود والخضروات المشوية</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="main">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/serratossteakhouse.com/cf10eadf261096e386358b499b1034d13c52fd35.webp" alt="Seafood Dish">
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <h4 data-translate="dish4">سلمون أطلسي مشوي</h4>
+                            <span class="price">280 ر.س</span>
+                        </div>
+                        <p data-translate="desc4">فيليه سلمون طازج مع صلصة الكريمة والشبت والليمون</p>
+                    </div>
+                </div>
+
+                <!-- Desserts -->
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/cloudfront-us-east-1.images.arcpublishing.com/9a8b7152c851b4e142a5331fc9457d5fbfbac653.jpg" alt="Elegant Dessert">
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <h4 data-translate="dish5">كريم بروليه الفانيليا</h4>
+                            <span class="price">85 ر.س</span>
+                        </div>
+                        <p data-translate="desc5">كريم الفانيليا الفرنسي التقليدي مع طبقة كراميل مقرمشة</p>
+                    </div>
+                </div>
+
+                <div class="menu-item" data-category="desserts">
+                    <div class="menu-image">
+                        <img src="https://kimi-web-img.moonshot.cn/img/media.istockphoto.com/e36f88d5ccbdd4a92bd3f62147f43b4ac5fa25f6.jpg" alt="Dessert Plating">
+                    </div>
+                    <div class="menu-info">
+                        <div class="menu-header">
+                            <h4 data-translate="dish6">تارت الشوكولاتة</h4>
+                            <span class="price">95 ر.س</span>
+                        </div>
+                        <p data-translate="desc6">تارت شوكولاتة بلجيكية 70% مع آيس كريم الفانيليا المدخن</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h3 class="section-subtitle" data-translate="moments">لحظات</h3>
+                <h2 class="section-title" data-translate="gallery_title">معرض الصور</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item large">
+                    <img src="https://kimi-web-img.moonshot.cn/img/res.cloudinary.com/f05bfeed34692a81bdd26d9b292989182191bb76" alt="Restaurant Interior">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.luxurylifestylemag.co.uk/9c96d74ab33be3b3db3d9bee3cb9a857bb13787f.jpg" alt="Food Plating">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://kimi-web-img.moonshot.cn/img/media.istockphoto.com/99101d2a19e3dffd71bf79f5148e360ca55c42d1.jpg" alt="Steak">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://kimi-web-img.moonshot.cn/img/www.luxurylifestylemag.co.uk/6249f3a5747f77bb47aa72edd32608a8b4cf4f3a.jpg" alt="Chef">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-expand"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section id="reservation" class="reservation">
+        <div class="container">
+            <div class="reservation-wrapper">
+                <div class="reservation-info">
+                    <h3 class="section-subtitle" data-translate="book_table">احجز طاولتك</h3>
+                    <h2 class="section-title" data-translate="reservation_title">لحظات لا تُنسى تنتظرك</h2>
+                    <p data-translate="reservation_text">احجز الآن واستمتع بتجربة طعام فاخرة في أجواء راقية. فريقنا جاهز لخدمتك على مدار الأسبوع.</p>
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+966 50 123 4567</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>reservations@lornoir.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span data-translate="address">طريق الملك فهد، الرياض</span>
+                        </div>
+                    </div>
+                </div>
+                <form class="reservation-form" onsubmit="handleReservation(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-translate="name">الاسم</label>
+                            <input type="text" required placeholder="محمد العلي">
+                        </div>
+                        <div class="form-group">
+                            <label data-translate="phone">رقم الجوال</label>
+                            <input type="tel" required placeholder="050 123 4567">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label data-translate="date">التاريخ</label>
+                            <input type="date" required>
+                        </div>
+                        <div class="form-group">
+                            <label data-translate="time">الوقت</label>
+                            <select required>
+                                <option value="">اختر الوقت</option>
+                                <option value="18:00">6:00 مساءً</option>
+                                <option value="19:00">7:00 مساءً</option>
+                                <option value="20:00">8:00 مساءً</option>
+                                <option value="21:00">9:00 مساءً</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="guests">عدد الضيوف</label>
+                        <select required>
+                            <option value="">اختر عدد الضيوف</option>
+                            <option value="2">2 أشخاص</option>
+                            <option value="4">4 أشخاص</option>
+                            <option value="6">6 أشخاص</option>
+                            <option value="8+">8+ أشخاص</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label data-translate="notes">ملاحظات خاصة</label>
+                        <textarea rows="3" placeholder="أي طلبات خاصة..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary btn-full" data-translate="confirm_booking">تأكيد الحجز</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>L'Or Noir</h2>
+                    <p data-translate="footer_text">وجهتك الأولى للطعام الفاخر في الرياض. نقدم تجربة طعام استثنائية تجمع بين الأصالة والحداثة.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 data-translate="quick_links">روابط سريعة</h4>
+                    <ul>
+                        <li><a href="#about" data-translate="about">من نحن</a></li>
+                        <li><a href="#menu" data-translate="menu">المنيو</a></li>
+                        <li><a href="#gallery" data-translate="gallery">معرض الصور</a></li>
+                        <li><a href="#reservation" data-translate="reservation">الحجوزات</a></li>
+                    </ul>
+                </div>
+                <div class="footer-hours">
+                    <h4 data-translate="working_hours">أوقات العمل</h4>
+                    <ul>
+                        <li><span data-translate="saturday_thursday">السبت - الخميس</span> <span>12:00 ظ - 11:00 م</span></li>
+                        <li><span data-translate="friday">الجمعة</span> <span>1:00 ظ - 12:00 ص</span></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 data-translate="newsletter">النشرة البريدية</h4>
+                    <p data-translate="newsletter_text">اشترك للحصول على أحدث العروض والأخبار</p>
+                    <form onsubmit="handleSubscribe(event)">
+                        <input type="email" placeholder="بريدك الإلكتروني" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 L'Or Noir. <span data-translate="rights">جميع الحقوق محفوظة</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <i class="fas fa-check-circle"></i>
+            <h3 data-translate="success_title">تم بنجاح!</h3>
+            <p id="modalMessage" data-translate="success_message">تم تأكيد حجزك وسنتواصل معك قريباً</p>
+            <button onclick="closeModal()" class="btn-primary" data-translate="close">إغلاق</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
